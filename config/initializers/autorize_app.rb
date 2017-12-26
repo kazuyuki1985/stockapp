@@ -31,3 +31,6 @@ get "/callback" do
   
     haml :callback # ここでトークンを表示している
   end
+
+
+  

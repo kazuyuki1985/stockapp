@@ -1,0 +1,5 @@
+development:
+  evernote_server: 'https://sandbox.evernote.com'
+  consumer_key: ‘kazuyan0806’
+  consumer_secret: ‘1623b846a079a701’
+  sandbox: true

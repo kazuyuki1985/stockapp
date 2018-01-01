@@ -3,11 +3,13 @@
   <head>
     <title>Stockapp</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'http://dev.evernote.com/documentation/reference/style.css' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
-  </head>
+  
+  
+    </head>
 
   <body>
 
@@ -16,5 +18,8 @@
     <%= yield %>
 
     <%= link_to "HOME", "/" %>
+
+    <%= link_to "ノートを作成", method: :create %>
+
   </body>
 </html>

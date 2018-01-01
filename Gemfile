@@ -54,5 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'evernote_oauth'
+gem 'haml-rails'
+gem 'omniauth-evernote'
+gem 'nokogiri'
+gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 gem 'sinatra'
-gem 'haml'

@@ -1,6 +1,6 @@
-require "sinatra"
-require "evernote_oauth"
-require "haml"
+#require "sinatra"
+#require "evernote_oauth"
+#require "haml"
 
 use Rack::Session::Cookie,
   :key => "rack.session",

@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20171223174635) do
 
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "url"
+    t.index ["title"], name: "index_notes_on_title"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false

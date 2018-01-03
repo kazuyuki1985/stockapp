@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stockapp</title>
+  <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'http://dev.evernote.com/documentation/reference/style.css' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
-  
+
+    
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   
     </head>
 
   <body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to image_tag('Stock app-logo.png', { :border => '0'}), projects_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", projects_path %></li>
+        <li><%= link_to "+ Task", new_project_path %></li>
+        <li><%= link_to "+ Note", new_note_path %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
 
-    <%= link_to image_tag('Stock app-logo.png', { :border => '0'}), projects_path %>
 
     <%= yield %>
-
     
-    <%= link_to "create note", new_note_path %>
 
   </body>
 </html>
+
+
+
+  <head>
+
+  </head>
+  <body>
+ 

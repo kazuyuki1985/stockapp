@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   post '/projects/:project_id/tasks/:id/toggle' => 'tasks#toggle'
 
-  root 'note#index'
-  get 'note/index'
+  root 'top#index'
+  get 'top/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

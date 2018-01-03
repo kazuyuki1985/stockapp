@@ -13,11 +13,11 @@
 
   <body>
 
-    <%= image_tag 'Stock app-logo.png' %>
+    <%= link_to image_tag('Stock app-logo.png', { :border => '0'}), projects_path %>
 
     <%= yield %>
 
-    <%= link_to "HOME", "/" %>
+    
     <%= link_to "create note", new_note_path %>
 
   </body>

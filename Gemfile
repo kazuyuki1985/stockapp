@@ -53,10 +53,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'evernote_oauth'
-gem 'haml-rails'
-gem 'omniauth-evernote'
-gem 'nokogiri'
-gem 'foundation-rails'
-gem 'foundation-icons-sass-rails'
-gem 'sinatra'
+gem 'bootstrap-sass', '3.3.6'
+gem 'sprockets', '3.7.1'

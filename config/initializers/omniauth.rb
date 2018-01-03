@@ -4,5 +4,3 @@ site = config['sandbox'] ? 'https://sandbox.evernote.com' : 'https://www.evernot
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :evernote, config['consumer_key'], config['consumer_secret'], :client_options => {:site => site}
 end
-
-OmniAuth.config.on_failure = LoginController.action(:oauth_failure)

@@ -17,11 +17,5 @@ module Stockapp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.encoding = "utf-8"
-    config.filter_parameters += [:password]
-    config.active_support.escape_html_entities_in_json = true
-    config.active_record.whitelist_attributes = true
-    config.assets.enabled = true
-    config.assets.version = '1.0'
   end
 end

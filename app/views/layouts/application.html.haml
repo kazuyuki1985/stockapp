@@ -25,13 +25,15 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="/projects") Stockapp
+        %a.navbar-brand(href="/users/sign_in") Stockapp
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
             %li= link_to "Task List", "/projects"
             %li= link_to "+ Task", "projects/new"
             %li= link_to "Note List", "/notes"
             %li= link_to "+ Note", "/notes/new"
+            %li= link_to "logout", "/users/sign_out"
+            %li= link_to "管理者ページ", "/admin"
 
     .container
       .row
@@ -48,3 +50,5 @@
               %li= link_to "+ Note", "/notes/new"
       %footer
         %p &copy; stockapp Company 2018
+
+        

@@ -69,3 +69,7 @@ gem 'twitter-bootstrap-rails'
 
 # シンプルフォーム
 gem 'simple_form'
+
+gem 'devise'
+gem 'cancancan'
+gem 'rails_admin'

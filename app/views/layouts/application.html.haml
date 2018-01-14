@@ -1,6 +1,7 @@
 !!! 5
 %html(lang="en")
   %head
+    .fixed-top
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -16,10 +17,11 @@
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
 
 
   %body
-%nav.navbar.navbar-default
+%navbar.navbar-default.navbar-fixed-topdefault
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
@@ -32,56 +34,41 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          %a{:href => "#"}
-            Link
-            %span.sr-only (current)
-        %li
-          %a{:href => "#"} Link
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Dropdown
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Action
-            %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
-            %li.divider{:role => "separator"}
-            %li
-              %a{:href => "#"} Separated link
-            %li.divider{:role => "separator"}
-            %li
-              %a{:href => "#"} One more separated link
+
       %form.navbar-form.navbar-left
         .form-group
-          %input.form-control{:placeholder => "Search", :type => "text"}/
+          %input.form-control{:placeholder => "ノート名で検索", :type => "text"}/
         %button.btn.btn-default{:type => "submit"} Submit
+        
 
       %ul.nav.navbar-nav.navbar-right
-        %li
-          %li= link_to "Task List", "/projects"
-          %li= link_to "Note List", "/notes"
         -if user_signed_in?
           %li= link_to "Log out", "/users/sign_out", :method => :delete
         -else
           %li= link_to "Log in", "/users/sign_in"
+
+        %li  
+          %button.btn.btn-default{"aria-label" => "right Align", :type => "button"}
+          %span.glyphicon-menu-hamburger{"aria-hidden" => "true"}
+        
         %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "", :role => "button"}
             Dropdown
             %span.caret
           %ul.dropdown-menu
             %li
-              %a{:href => "#"} Action
+              %a{:href => "/users/password/edit"} user edit
             %li
               %a{:href => "#"} Another action
             %li
               %a{:href => "#"} Something else here
             %li.divider{:role => "separator"}
             %li
-              %a{:href => "#"} Separated link
+              %a{:href => "/users/sign_out", :method => :delete} Log out
+            / Include all compiled plugins (below), or include individual files as needed
+            %script{:src => "js/bootstrap.min.js"}
+            / jQuery (necessary for Bootstrap's JavaScript plugins)
+            %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"}
     / /.navbar-collapse
   / /.container-fluid
 
@@ -95,10 +82,15 @@
     %li= link_to "Note List", "/notes"
 
 
+    
 
-    .col-lg-4
+
+  %body
     = bootstrap_flash
     = yield
+
+    
+     
 
 %footer
 %p &copy; stockapp Company 2018

@@ -57,8 +57,6 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'sprockets', '3.7.1'
 gem 'haml-rails'
 
-# less(CSS)対応（後述LESSを使う場合）
-gem 'less-rails'
 # JavaScript のエンジンである v8 を Ruby から使えるようにする
 gem 'therubyracer'
 # JavaScriptコードを実行するためのエンジン
@@ -73,3 +71,5 @@ gem 'simple_form'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap-material-design'

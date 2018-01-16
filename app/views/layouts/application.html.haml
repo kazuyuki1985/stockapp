@@ -63,8 +63,8 @@
             %li
               %a{:href => "#"} Something else here
             %li.divider{:role => "separator"}
-            %li
-              %a{:href => "/users/sign_out", :method => :delete} Log out
+            %li= link_to "Log out", "/users/sign_out", :method => :delete
+            
             / Include all compiled plugins (below), or include individual files as needed
             / jQuery (necessary for Bootstrap's JavaScript plugins)
     / /.navbar-collapse

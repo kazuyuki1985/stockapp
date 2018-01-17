@@ -21,7 +21,7 @@
 
 
   %body
-%navbar.navbar-default.navbar-fixed-topdefault
+%nav.navbar.navbar-.navbar-fixed-top{:role => "navigation"} 
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
@@ -40,55 +40,48 @@
           %input.form-control{:placeholder => "ノート名で検索", :type => "text"}/
         %button.btn.btn-default{:type => "submit"} Submit
         
-
-      %ul.nav.navbar-nav.navbar-right
-        -if user_signed_in?
-          %li= link_to "Log out", "/users/sign_out", :method => :delete
-        -else
-          %li= link_to "Log in", "/users/sign_in"
-
-        %li  
-          %button.btn.btn-default{"aria-label" => "right Align", :type => "button"}
-          %span.glyphicon-menu-hamburger{"aria-hidden" => "true"}
         
-        %li.dropdown
+
+      %form.nav.navbar-nav.navbar-right
+        %li.glyphicon
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "", :role => "button"}
-            Dropdown
-            %span.caret
+            %span.glyphicon-menu-hamburger{"aria-hidden" => "true"}
+            
           %ul.dropdown-menu
             %li
-              %a{:href => "/users/password/edit"} user edit
-            %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
+              %a{:href => "/users/password/edit"} 各種設定
             %li.divider{:role => "separator"}
-            %li= link_to "Log out", "/users/sign_out", :method => :delete
+            -if user_signed_in?
+              %li= link_to "ログアウト", "/users/sign_out", :method => :delete
+            -else
+              %li= link_to "ログイン", "/users/sign_in"
             
             / Include all compiled plugins (below), or include individual files as needed
             / jQuery (necessary for Bootstrap's JavaScript plugins)
     / /.navbar-collapse
   / /.container-fluid
+  
 
-  .container
-  .row
-  .col-lg-2
-  .well.sidebar-nav
+  .col-md-2
+  .well.sidebar-nav.affix{:role => "complementary"}
     %h3 タクス一覧
     %ul.nav.nav-list
     %li= link_to "Task list", "/projects"
     %li= link_to "Note List", "/notes"
 
-
+  .col-md-5
+    %li
+    %button.btn.btn-link{:type => "submit"} タスクを選択してください
     
+  
+    .col-md-5
 
-
-  %body
+      %button.btn.btn-link{:type => "submit"} タスクを選択してください
+    
+    
+    
     = bootstrap_flash
-    = yield
-
-    
-     
+    = yield 
 
 %footer
-%p &copy; stockapp Company 2018
+//%p &copy; stockapp Company 2018

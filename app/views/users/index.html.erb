@@ -1,0 +1,10 @@
+- provide(:title, 'All notes')
+%h1 All notes
+= will_paginate
+/ 検索拡張機能
+%p note search
+= form_tag(notes_path) do
+  = text_field_tag :search
+  = submit_tag 'Search', :name => nil
+%ul.notes= render @notes
+= will_paginate

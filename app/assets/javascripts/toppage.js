@@ -16,6 +16,7 @@ $(".product_link").on("click", function(){
     //application.html.hamlの93行目.box.grayのところに何か#IDを付けておきましょう
 
     $("#projectArea").html(result);
+    $("#noteArea").html(result);
 
   },
 

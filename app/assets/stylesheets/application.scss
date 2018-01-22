@@ -1,4 +1,4 @@
-body { background: #eee;}
+body { background: blue}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -55,7 +55,7 @@ body { background: #eee;}
   }
   .bs-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
-    top: 80px;
+    top: 0px;
   }
   .bs-sidebar.affix-bottom {
     position: absolute; /* Undo the static from mobile first approach */
@@ -65,4 +65,109 @@ body { background: #eee;}
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+
+@charset "utf-8";
+
+/* ヘッダー */
+div#header {
+  position: fixed; /* 画面をスクロールしてもヘッダーを常に上部固定 */
+  width: 100%; /* 横幅を画面一杯に設定 */
+  height: 46px; /* ヘッダーの高さを設定 */
+  background: #F8F8F8; /* 背景色の設定 */
+  border-bottom: solid 1px #EEE; /* ヘッダーの下に1ピクセルの実線を設定 */
+}
+
+div#headerArea {
+  margin: 0 auto; /* 横幅をautoにすることでコンテンツが中央寄りに設定 */
+  width: 980px; /* ヘッダーコンテンツ部分の横幅を設定 */
+}
+ /* ヘッダーロゴ */
+div#header_logo {
+  float: left; /* ロゴ表示部分を左寄せで設定 */
+  padding: 12px 0 0 0; /* ロゴ表示部分の上に余白12ピクセルを設定 */
+  font-weight: bold; /* ロゴのテキストを太字に設定 */
+  color: #777777; /* ロゴの色を設定 */
+}
+
+ /* リンク */
+ a:link {
+  color: #006DD9; /* リンクテキストを青色に設定 */
+  text-decoration: none; /* テキストに下線が表示されないように設定 */
+}
+
+a:hover {  /* hoverはマウスを乗せたときの設定 */
+  color: #cd4730; /* リンクテキストを赤色に設定 */
+  text-decoration: underline; /* テキストに下線が表示されないように設定 */
+}
+h1{
+  margin-bottom: 10px;  /* h1の下に10pxの余白を設定 */
+  font-size: 182%; /* フォントサイズを元サイズの182%で表示 */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold; /* 太字 */
+  line-height: 10em; /* 上下に半行余白の段落の高さを設定 */
+  color: black; /* フォントの色を白に設定 */
+}
+
+/* メインパネル */
+div#main_panel {
+  padding: 46px 0 0 0; /* メインパネル上部に46ピクセルの余白を設定 */
+  height: 800px; /* メインパネルの高さを400pxに設定 */
+  background: url(DSC03435.jpg) no-repeat center center;
+  /* 背景を中央寄せで繰り返しなしで設定 */
+  background-size: cover; /* 背景画像をフルスクリーンで表示 */
+}
+
+div#main_panelArea {
+  margin: 0 auto; /* 横幅をautoにすることでコンテンツが中央寄りになります */
+  padding: 0px 0 0 0; /* メインパネルコンテンツ上部に90ピクセルの余白を設定 */
+  width: 980px; /* 横幅を980ピクセルで設定 */
+  padding: 0px
+  
+}
+
+p1 {
+  padding: 0px 0 ; /* ホームページ全体の段落要素に上下10ピクセルの余白を設定します */
+  color: white;
+
+}
+
+.countaner{
+  display: table;
+  width: 100px;
+  padding: 10px;
+}
+.box.blue{
+  display:table-cell;
+  width: 200px;
+  padding: 10px;
+  height: 200px
+}
+
+.box.gray{
+  display:table-cell;
+  width: 500px;
+  padding: 10px;
+  height: 200px
+}
+.box.silver{
+  display:table-cell;
+  width: 700px;
+  padding: 10px;
+  height: 200px
+}
+.row{
+  display: table-row;
+}
+
+.blue {background:rgb(201, 223, 212); }
+.silver {background: rgb(223, 220, 220); }
+.gray {background:rgb(204, 198, 198); }
+footer {
+  padding: 10px;
+}
+
+p2 {
+  padding: 10px; /* ホームページ全体の段落要素に上下10ピクセルの余白を設定します */
+  color: black;
 }

@@ -1,11 +1,10 @@
 !!! 5
-%html(lang="en")
+%html(lang="ja")
   %head
-    .fixed-top
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "Stockapp"
+    
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag '/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
@@ -17,10 +16,15 @@
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
-    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/application.scss", :rel => "stylesheet"}/
+    
 
 
   %body
+/ ヘッダーここから
+#header
+#headerArea
+#header_logo Stockapp
 %nav.navbar.navbar-.navbar-fixed-top{:role => "navigation"} 
   .container-fluid
     / Brand and toggle get grouped for better mobile display
@@ -35,10 +39,10 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
 
-      %form.navbar-form.navbar-left
+      =form_tag notes_path, method: :get, class: "navbar-form navbar-left" do
         .form-group
-          %input.form-control{:placeholder => "ノート名で検索", :type => "text"}/
-        %button.btn.btn-default{:type => "submit"} Submit
+          %input.form-control{:placeholder => "ノート名で検索", :type => "text", :name => "search" }
+        %button.btn.btn-default{:type => "submit"} 検索
         
         
 
@@ -60,28 +64,42 @@
             / jQuery (necessary for Bootstrap's JavaScript plugins)
     / /.navbar-collapse
   / /.container-fluid
+  / ヘッダーここまで
+#main_panel
+  #main_panelArea
+    %h1
+    stockappはtodo管理をもっと身近に
+    %br/
+    あなたに様々なサービスを提供します。
+    %p1
+    %a.button{:href => "/users/sign_in"} log inはこちら
+
+  .container-fluid
+    .row
+    .box.blue
+      //.well.sidebar-nav.affix{:role => "complementary"}
+      %h 新着ノート
+      %ul.nav.nav-list
+        %li= link_to "フォルダ", "/projects"
+        - @projects.each do |project|
+          =project.title
+
+        %li= link_to "ノート", "/notes"
+        - @notes.each do |note|
+          =note.title
+          //%ul= link_to "", "/projects/:id" 実装候補
+          
   
-
-  .col-md-2
-  .well.sidebar-nav.affix{:role => "complementary"}
-    %h3 タクス一覧
-    %ul.nav.nav-list
-    %li= link_to "Task list", "/projects"
-    %li= link_to "Note List", "/notes"
-
-  .col-md-5
-    %li
-    %button.btn.btn-link{:type => "submit"} タスクを選択してください
-    
-  
-    .col-md-5
-
-      %button.btn.btn-link{:type => "submit"} タスクを選択してください
+    .box.gray
+      %a.btn.btn-block "フォルダを選択してください"
+      //content_for(:projects) do 実装候補
+      
+    .box.silver
+      %a.btn.btn-block ノートを選択してください
     
     
-    
-    = bootstrap_flash
-    = yield 
+     
+//= yield    
 
 %footer
-//%p &copy; stockapp Company 2018
+%p2 &copy; stockapp Company 2018

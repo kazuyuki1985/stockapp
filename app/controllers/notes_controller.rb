@@ -4,7 +4,11 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    if params[:search]
+       @notes = Note.where("title like ?", "%#{params[:search]}%")
+    else
+       @notes = Note.all
+    end
   end
 
   # GET /notes/1
@@ -72,3 +76,4 @@ class NotesController < ApplicationController
       params.require(:note).permit(:title, :body)
     end
 end
+

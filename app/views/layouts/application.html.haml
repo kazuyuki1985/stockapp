@@ -77,29 +77,17 @@
   .container-fluid
     .row
     .box.blue
-      //.well.sidebar-nav.affix{:role => "complementary"}
       %h 新着ノート
       %ul.nav.nav-list
-        %li= link_to "フォルダ", "/projects"
+        %li= link_to "フォルダ", projects_path
         - @projects.each do |project|
-          =project.title
+          = link_to project.title, project_path(project), class: "product_link"
 
-        %li= link_to "ノート", "/notes"
+        %li= link_to "ノート", notes_path
         - @notes.each do |note|
           =note.title
-          //%ul= link_to "", "/projects/:id" 実装候補
-          
-  
-    .box.gray
-      %a.btn.btn-block "フォルダを選択してください"
-      //content_for(:projects) do 実装候補
-      
-    .box.silver
-      %a.btn.btn-block ノートを選択してください
-    
-    
      
-//= yield    
+    = yield    
 
 %footer
 %p2 &copy; stockapp Company 2018

@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
       # showアクションを追加
   def show
+    render partial: "show" if request.xhr? 
   end
 
   def new

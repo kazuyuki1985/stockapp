@@ -74,6 +74,18 @@
     %p1
     %a.button{:href => "/users/sign_in"} log inはこちら
 
+  .container-fluid
+    .row
+      .box.blue
+        %h 新着ノート
+        %ul.nav.nav-list
+          %li= link_to "フォルダ", projects_path
+          - @projects.each do |project|
+            = link_to project.title, project_path(project), class: "product_link"
+
+          %li= link_to "ノート", notes_path
+          - @notes.each do |note|
+            = link_to note.title, note_path(note), class: "note_link"
      
       = yield
 

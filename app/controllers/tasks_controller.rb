@@ -1,5 +1,4 @@
-class TasksController < ApplicationController
-    before_action :authenticate_user!
+class TasksController < StockappController
     skip_before_action :verify_authenticity_token, only: :toggle
     
 def create

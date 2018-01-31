@@ -1,5 +1,4 @@
-class ProjectsController < ApplicationController
-  before_action :authenticate_user!
+class ProjectsController < StockappController
   before_action :set_project, only:[:show, :edit, :update, :destroy]
     # indexアクションを追加
     def index

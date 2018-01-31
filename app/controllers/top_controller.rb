@@ -1,5 +1,4 @@
-class TopController < ApplicationController
-    before_action :authenticate_user!
+class TopController < StockappController
 
 def index
     @notes = Note.all

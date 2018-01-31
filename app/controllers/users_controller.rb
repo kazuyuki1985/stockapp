@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!
+class UsersController < StockappController
 
       def index
         @notes = note.where(activated: true).paginate(page: params[:page]).search(params[:search])

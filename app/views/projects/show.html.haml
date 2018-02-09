@@ -5,6 +5,7 @@
     %strong= model_class.human_attribute_name(:title) + ':'
     %br
       = @project.title
+    %h3 Projects (#{@user.projects.count})
   %table.table.table-striped
 
 

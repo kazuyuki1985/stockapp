@@ -20,6 +20,7 @@ class NotesController < StockappController
   # GET /notes/new
   def new
     @note = Note.new
+    render partial: "new" if request.xhr? 
   end
 
   # GET /notes/1/edit

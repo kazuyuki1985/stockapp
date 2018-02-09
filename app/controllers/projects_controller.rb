@@ -4,13 +4,13 @@ class ProjectsController < StockappController
     def index
         # @をつけた変数はviewでそのまま使用可能
         # Projectの全データを引っ張ってくる
-        @projects = Project.all
+        @projects = current_user.projects
     end
 
       # showアクションを追加
   def show
     render partial: "show" if request.xhr? 
-    @notes = Note.all
+    @notes = current_user.projects
   end
 
   def new
@@ -18,7 +18,7 @@ class ProjectsController < StockappController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
     # データの保存
     if @project.save
       # saveがtrueだったらHOMEへ移動
@@ -53,7 +53,7 @@ class ProjectsController < StockappController
     end
 
     def set_project
-      @project = Project.find(params[:id])
+      @project = current_user.projects.find(params[:id])
     end
 
 end

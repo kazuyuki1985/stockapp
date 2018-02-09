@@ -5,9 +5,9 @@ class NotesController < StockappController
   # GET /notes.json
   def index
     if params[:search]
-       @notes = Note.where("title like ?", "%#{params[:search]}%")
+       @notes = current_user.notes.where("title like ?", "%#{params[:search]}%")
     else
-       @notes = Note.all
+       @notes = current_user.notes
     end
   end
 
@@ -29,7 +29,7 @@ class NotesController < StockappController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = current_user.notes.new(note_params)
 
     respond_to do |format|
       if @note.save
@@ -69,7 +69,7 @@ class NotesController < StockappController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
-      @note = Note.find(params[:id])
+      @note = current_user.notes.where(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

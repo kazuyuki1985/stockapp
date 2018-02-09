@@ -1,6 +1,6 @@
 class TopController < StockappController
 
 def index
-    @notes = Note.all
+    @notes = current_user.notes
 end
 end

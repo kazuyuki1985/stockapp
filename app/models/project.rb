@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
   has_many :tasks
+  belongs_to :user
+  
   
   # 必須制御
   # 「project」を未入力の状態では保存できなくなる

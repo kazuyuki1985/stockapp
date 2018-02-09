@@ -156,6 +156,12 @@ p1 {
   padding: 10px;
   height: 200px
 }
+.box.white{
+  display:table-cell;
+  width: 700px;
+  padding: 10px;
+  height: 400px
+}
 .row{
   display: table-row;
 }
@@ -163,6 +169,8 @@ p1 {
 .blue {background:rgb(201, 223, 212); }
 .silver {background: rgb(223, 220, 220); }
 .gray {background:rgb(204, 198, 198); }
+.white {background:white; }
+
 footer {
   padding: 10px;
 }

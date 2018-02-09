@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   def get_menu
-    @projects = Project.all
-    @notes = Note.all
+    @projects = current_user.projects
+    @notes = current_user.notes
   end
 end

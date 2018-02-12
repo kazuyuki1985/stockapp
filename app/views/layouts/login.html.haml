@@ -80,10 +80,14 @@
         %h 新着ノート
         %ul.nav.nav-list
           %li= link_to "フォルダ", projects_path
+          %h3 フォルダ (#{@current_user.projects.count})
           - @projects.each do |project|
+            
             = link_to project.title, project_path(project), class: "product_link"
+            
 
           %li= link_to "ノート", notes_path
+          %h3 ノート (#{@current_user.notes.count})
           - @notes.each do |note|
             = link_to note.title, note_path(note), class: "note_link"
      

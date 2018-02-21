@@ -1,1 +1,0 @@
-EVERNOTE_CONFIG = Rails.application.config_for(:evernote)
